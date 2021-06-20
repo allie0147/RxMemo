@@ -13,6 +13,8 @@
 		B5DA671F267F581700E16A09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5DA671E267F581700E16A09 /* Assets.xcassets */; };
 		B5DA6722267F581700E16A09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5DA6720267F581700E16A09 /* LaunchScreen.storyboard */; };
 		B5DA672F267F755E00E16A09 /* Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DA672E267F755E00E16A09 /* Memo.swift */; };
+		B5DA6731267F75F900E16A09 /* MemoStorageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DA6730267F75F900E16A09 /* MemoStorageType.swift */; };
+		B5DA6735267F76AC00E16A09 /* MemoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DA6734267F76AC00E16A09 /* MemoryStorage.swift */; };
 		FDF442A75701C197E2CEC41D /* Pods_RxMemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F34699FCAE9E682B3DCA3EF8 /* Pods_RxMemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		B5DA6721267F581700E16A09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5DA6723267F581700E16A09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5DA672E267F755E00E16A09 /* Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memo.swift; sourceTree = "<group>"; };
+		B5DA6730267F75F900E16A09 /* MemoStorageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoStorageType.swift; sourceTree = "<group>"; };
+		B5DA6734267F76AC00E16A09 /* MemoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryStorage.swift; sourceTree = "<group>"; };
 		F34699FCAE9E682B3DCA3EF8 /* Pods_RxMemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxMemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -80,7 +84,6 @@
 				B5DA6712267F581500E16A09 /* AppDelegate.swift */,
 				B5DA671E267F581700E16A09 /* Assets.xcassets */,
 				B5DA6723267F581700E16A09 /* Info.plist */,
-				B5DA671B267F581500E16A09 /* RxMemo.xcdatamodeld */,
 			);
 			path = RxMemo;
 			sourceTree = "<group>";
@@ -104,6 +107,9 @@
 		B5DA672B267F615100E16A09 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B5DA6733267F768900E16A09 /* CoreDataStorage */,
+				B5DA6732267F767A00E16A09 /* MemoryStorage */,
+				B5DA6730267F75F900E16A09 /* MemoStorageType.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -121,6 +127,22 @@
 			children = (
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		B5DA6732267F767A00E16A09 /* MemoryStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B5DA6734267F76AC00E16A09 /* MemoryStorage.swift */,
+			);
+			path = MemoryStorage;
+			sourceTree = "<group>";
+		};
+		B5DA6733267F768900E16A09 /* CoreDataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B5DA671B267F581500E16A09 /* RxMemo.xcdatamodeld */,
+			);
+			path = CoreDataStorage;
 			sourceTree = "<group>";
 		};
 		DA340A86ED97443717D48816 /* Frameworks */ = {
@@ -246,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5DA672F267F755E00E16A09 /* Memo.swift in Sources */,
+				B5DA6731267F75F900E16A09 /* MemoStorageType.swift in Sources */,
 				B5DA6713267F581500E16A09 /* AppDelegate.swift in Sources */,
 				B5DA671D267F581500E16A09 /* RxMemo.xcdatamodeld in Sources */,
+				B5DA6735267F76AC00E16A09 /* MemoryStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
