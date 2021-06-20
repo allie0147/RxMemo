@@ -13,6 +13,7 @@ class SceneCoordinator: SceneCoordinatorType {
 
     private lazy var bag = DisposeBag()
 
+    // view 전환 시, 필수 요건
     private var window: UIWindow
     private var currentVC: UIViewController
 
@@ -30,7 +31,7 @@ class SceneCoordinator: SceneCoordinatorType {
             currentVC = target
             window.rootViewController = target
             subject.onCompleted()
-        case .push:
+        case .push: // 네비게이션 사용 필수
             guard let nav = currentVC.navigationController else {
                 subject.onError(TransitionError.navigationControllerMissing)
                 break
@@ -49,7 +50,8 @@ class SceneCoordinator: SceneCoordinatorType {
 
     @discardableResult
     func close(animated: Bool) -> Completable {
-        return Completable.create { [unowned self] completable in
+        return Completable.create { [unowned self]
+            completable in
             if let presentingVC = self.currentVC.presentingViewController {
                 self.currentVC.dismiss(animated: animated) {
                     self.currentVC = presentingVC

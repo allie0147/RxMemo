@@ -21,25 +21,33 @@ extension Scene {
 
         switch self {
         case .list(let viewModel):
-            guard let nav = storyboard.instantiateViewController(withIdentifier: "ListNav") as? UINavigationController else {
+            guard let nav = storyboard.instantiateViewController(
+                withIdentifier: "ListNav"
+            ) as? UINavigationController else {
                 fatalError()
             }
-            guard var listVC = nav.viewControllers.first as? MemoListViewController else {
+            guard var listVC = nav.viewControllers.first as? MemoListViewController
+                else {
                 fatalError()
             }
-            listVC.bind(viewModel: viewModel)
+            listVC.bind(viewModel: viewModel) // bindViewModel 호출
             return nav
         case .detail(let viewModel):
-            guard var detailVC = storyboard.instantiateViewController(withIdentifier: "DetailVC") as? MemoDetailViewController else {
+            guard var detailVC = storyboard.instantiateViewController(
+                withIdentifier: "DetailVC"
+            ) as? MemoDetailViewController else {
                 fatalError()
             }
             detailVC.bind(viewModel: viewModel)
             return detailVC
         case .compose(let viewModel):
-            guard let nav = storyboard.instantiateViewController(withIdentifier: "ComposeNav") as? UINavigationController else {
+            guard let nav = storyboard.instantiateViewController(
+                withIdentifier: "ComposeNav"
+            ) as? UINavigationController else {
                 fatalError()
             }
-            guard var composeVC = nav.viewControllers.first as? MemoComposeViewController else {
+            guard var composeVC = nav.viewControllers.first as? MemoComposeViewController
+                else {
                 fatalError()
             }
             composeVC.bind(viewModel: viewModel)

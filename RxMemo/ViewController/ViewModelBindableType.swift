@@ -15,7 +15,7 @@ protocol ViewModelBindableType {
     func bindViewModel()
 }
 extension ViewModelBindableType where Self: UIViewController {
-    // 자동으로 bindViewModel 호출
+    /// 자동으로 bindViewModel 호출: Scene 전환 시 호출
     mutating func bind(viewModel: Self.ViewModelType) {
         self.viewModel = viewModel
         loadViewIfNeeded()
